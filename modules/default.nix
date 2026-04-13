@@ -1,0 +1,6 @@
+{
+    imports = [
+        ./drivers
+        ./kde.nix
+    ];
+}

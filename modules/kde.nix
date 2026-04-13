@@ -1,0 +1,21 @@
+{ config, pkgs, ... }:
+{
+    services = {
+        desktopManager.plasma6.enable = true;
+        displayManager.sddm.enable = true;
+        displayManager.sddm.wayland.enable = true;
+    };
+
+    environment.systemPackages = with pkgs; [
+        # KDE Utilities
+        kdePackages.discover # Optional: Software center for Flatpaks/firmware updates
+        kdePackages.kcalc # Calculator
+        kdePackages.kcharselect # Character map
+        kdePackages.kate # Character map
+        kdePackages.kclock # Clock app
+        kdePackages.kcolorchooser # Color picker
+        kdePackages.kolourpaint # Simple paint program
+        kdePackages.ksystemlog # System log viewer
+        kdePackages.sddm-kcm # SDDM configuration module
+    ];
+}

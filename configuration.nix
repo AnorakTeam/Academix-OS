@@ -2,19 +2,23 @@
 
 { config, pkgs, ... }:
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+    imports = [
+        ./modules
+    ];
 
-  users.users.test = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    initialPassword = "test";
-  };
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
 
-  environment.systemPackages = with pkgs; [
-    cowsay
-    lolcat
-  ];
+    users.users.test = {
+        isNormalUser = true;
+        extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+        initialPassword = "test";
+    };
 
-  system.stateVersion = "24.05";
+    environment.systemPackages = with pkgs; [
+        cowsay
+        lolcat
+    ];
+
+    system.stateVersion = "25.11";
 }
