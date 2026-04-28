@@ -12,10 +12,6 @@ with lib;
       vim
       neovim
       nano
-      gedit
-      kate
-      jetbrains.idea-community
-      jetbrains.pycharm-community
     ];
   };
 }

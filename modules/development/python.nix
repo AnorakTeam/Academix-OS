@@ -7,18 +7,18 @@ with lib;
 
   config = mkIf config.academixos.development.python.enable {
     environment.systemPackages = with pkgs; [
-      python312
-      python312Packages.pip
-      python312Packages.virtualenv
-      python312Packages.poetry
-      python312Packages.pytest
-      python312Packages.jupyter
-      python312Packages.numpy
-      python312Packages.pandas
-      python312Packages.scipy
-      python312Packages.matplotlib
-      python312Packages.django
-      python312Packages.flask
+      python314
+      python314Packages.pip
+      python314Packages.virtualenv
+      poetry
+      python314Packages.pytest
+      python314Packages.jupyter
+      python314Packages.numpy
+      python314Packages.pandas
+      python314Packages.scipy
+      python314Packages.matplotlib
+      python314Packages.django
+      python314Packages.flask
       pypy3
     ];
   };

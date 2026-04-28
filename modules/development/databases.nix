@@ -11,8 +11,6 @@ with lib;
       postgresql_15
       pgcli
       mycli
-      dbeaver
-      redis
       mongodb
       sqlite
     ];

@@ -18,7 +18,6 @@ with lib;
       kdePackages.gwenview
       kdePackages.ark
       kdePackages.kcalc
-      kdePackages.kwrite
       kdePackages.kfind
       kdePackages.plasma-browser-integration
       kdePackages.kde-gtk-config
