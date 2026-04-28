@@ -1,21 +1,28 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
+
+with lib;
+
 {
-    services = {
-        desktopManager.plasma6.enable = true;
-        displayManager.sddm.enable = true;
-        displayManager.sddm.wayland.enable = true;
-    };
+  options.academixos.kde.enable = mkEnableOption "KDE Plasma 6 desktop";
+
+  config = mkIf config.academixos.kde.enable {
+    services.desktopManager.plasma6.enable = true;
+    services.displayManager.sddm.enable = true;
+    services.displayManager.sddm.wayland.enable = true;
 
     environment.systemPackages = with pkgs; [
-        # KDE Utilities
-        kdePackages.discover # Optional: Software center for Flatpaks/firmware updates
-        kdePackages.kcalc # Calculator
-        kdePackages.kcharselect # Character map
-        kdePackages.kate # Character map
-        kdePackages.kclock # Clock app
-        kdePackages.kcolorchooser # Color picker
-        kdePackages.kolourpaint # Simple paint program
-        kdePackages.ksystemlog # System log viewer
-        kdePackages.sddm-kcm # SDDM configuration module
+      kdePackages.kate
+      kdePackages.konsole
+      kdePackages.dolphin
+      kdePackages.okular
+      kdePackages.gwenview
+      kdePackages.ark
+      kdePackages.kcalc
+      kdePackages.kwrite
+      kdePackages.kfind
+      kdePackages.plasma-browser-integration
+      kdePackages.kde-gtk-config
+      kdePackages.kdeplasma-addons
     ];
+  };
 }

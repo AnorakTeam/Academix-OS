@@ -1,6 +1,7 @@
 {
-    imports = [
-        ./drivers
-        ./kde.nix
-    ];
+  imports = [
+    ./kde.nix
+    ./development
+    ./calamares.nix
+  ];
 }
