@@ -14,6 +14,9 @@
     cores = 0;
   };
 
+  # Allow unfree packages (for VSCode, etc.)
+  nixpkgs.config.allowUnfree = true;
+
   # ISO image customization
   isoImage.edition = "academix";
   isoImage.volumeID = "AcademixOS";
