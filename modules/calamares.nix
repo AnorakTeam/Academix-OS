@@ -1,7 +1,12 @@
-{ lib, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  # Calamares branding customization (installer is already imported in the ISO)
+  environment.etc."calamares/settings.conf".text = ''
+    ---
+    modules-search: [ local, /etc/calamares/modules ]
+    branding: academix
+  '';
+
   environment.etc."calamares/branding/academix/branding.desc".text = ''
     ---
     componentName: academix
@@ -14,18 +19,29 @@
       versionedName: AcademixOS 0.1
       shortVersionedName: AcademixOS 0.1
       bootloaderEntryName: AcademixOS
-      desktopFile: org.kde.plasmashell
 
     images:
       productLogo: "logo.png"
-      productWallpaper: "wallpaper.png"
-      productWelcome: "welcome.png"
 
     colors:
       text: "#000000"
       background: "#ffffff"
-      baseText: "#000000"
-    '';
+  '';
+
+  environment.etc."calamares/modules/welcome.conf".text = ''
+    ---
+    showSupportUrl: false
+    showKnownIssuesUrl: false
+
+    welcome:
+      message: "Welcome to AcademixOS"
+      description: "This installer will guide you through the installation of AcademixOS."
+  '';
+
+  environment.etc."calamares/modules/locale.conf".text = ''
+    ---
+    region: "en_US"
+  '';
 
   environment.systemPackages = with pkgs; [
     calamares-nixos
