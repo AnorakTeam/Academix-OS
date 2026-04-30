@@ -12,7 +12,6 @@ with lib;
       python314Packages.virtualenv
       poetry
       python314Packages.pytest
-      python314Packages.jupyter
       python314Packages.numpy
       python314Packages.pandas
       python314Packages.scipy

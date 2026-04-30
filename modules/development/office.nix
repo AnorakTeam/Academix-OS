@@ -10,12 +10,9 @@ with lib;
       libreoffice-fresh
       libreoffice-fresh-unwrapped
       librewolf
-      firefox
-      thunderbird
       gimp
       inkscape
       blender
-      calibre
     ];
   };
 }

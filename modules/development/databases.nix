@@ -9,9 +9,6 @@ with lib;
     environment.systemPackages = with pkgs; [
       postgresql
       postgresql_15
-      pgcli
-      mycli
-      mongodb
       sqlite
     ];
 

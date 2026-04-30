@@ -11,8 +11,6 @@ with lib;
       jdk17
       maven
       gradle
-      ant
-      spring-boot-cli
     ];
   };
 }

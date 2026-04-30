@@ -11,9 +11,6 @@ with lib;
       docker-compose
       podman
       podman-compose
-      containerd
-      skopeo
-      buildkit
     ];
 
     # Don't enable Docker daemon in live ISO to save resources
