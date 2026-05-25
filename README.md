@@ -3,8 +3,8 @@
 Made by:
 
 - josemanuelpr@ufps.edu.co
-- 
-- 
+- julianeduardovc@ufps.edu.co
+-
 
 ## How to create the VM image
 
